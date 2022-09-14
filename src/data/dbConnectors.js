@@ -1,16 +1,25 @@
-export const ContactSchema = new Schema({
+import mongoose from 'mongoose';
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/contacts', {
+  useNewUrlParser: true,
+});
+
+const contactSchema = new mongoose.Schema({
   firstName: {
-      type: String,
-      required: 'Enter a first name'
+    type: String,
   },
   lastName: {
-      type: String,
-      required: 'Enter a last name'
+    type: String,
   },
   email: {
-      type: String
+    type: String,
   },
   company: {
-      type: String
+    type: String,
   },
 });
+
+const Contacts = mongoose.model('contacts', contactSchema);
+
+export { Contacts };
