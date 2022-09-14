@@ -37,3 +37,20 @@ query {
     lastName
   }
 }
+
+// get data with aliases and fragments
+
+query {
+  one: getOneContact(id: "63220ca7e8d3d5c83eb70c1d") {
+    ...contactFragment
+  }
+  two: getOneContact(id: "63220ce1e8d3d5c83eb70c1f") {
+    ...contactFragment
+  }
+}
+
+fragment contactFragment on Contact {
+  firstName
+  lastName
+  company
+}
