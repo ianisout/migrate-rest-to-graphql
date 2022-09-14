@@ -55,7 +55,7 @@ fragment contactFragment on Contact {
   company
 }
 
-// 
+// update contact
 
 mutation {
   updateContact(input: {
@@ -68,4 +68,10 @@ mutation {
     lastName
     company
   }
+}
+
+// delete contact (doesn't need a return)
+
+mutation {
+  deleteContact(id: "63220ca7e8d3d5c83eb70c1d")
 }
