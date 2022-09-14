@@ -19,8 +19,8 @@ export const resolvers = {
 
       newContact.id = newContact._id;
 
-      return new Promise((resolve, object) => {
-        newContact.sabe((err) => {
+      return new Promise((resolve, reject) => {
+        newContact.save((err) => {
           if (err) reject(err);
           else resolve(newContact);
         });
