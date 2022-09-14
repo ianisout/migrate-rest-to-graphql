@@ -22,3 +22,18 @@ query {
     company
   }
 }
+
+// get multiple queries with different parameters with aliases
+
+query {
+  one: getOneContact(id: "63220ca7e8d3d5c83eb70c1d") {
+    firstName
+    lastName
+    email
+    company
+  }
+  two: getOneContact(id: "63220ce1e8d3d5c83eb70c1f") {
+    firstName
+    lastName
+  }
+}
