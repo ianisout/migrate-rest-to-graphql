@@ -1,0 +1,14 @@
+// create user
+
+mutation {
+  createContact(input: {
+    firstName: "Ian",
+    lastName:"LS",
+    email: "ian@mail.com",
+    company: "Home Workers"
+  }) {
+    id
+    firstName
+  }
+}
+
