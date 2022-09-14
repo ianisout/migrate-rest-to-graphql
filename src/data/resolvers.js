@@ -9,24 +9,22 @@ export const resolvers = {
     },
   },
   Mutation: {
-    createContact:
-      (root,
-      (input) => {
-        const newContact = new Contacts({
-          firstName: input.firstName,
-          lastName: input.lastName,
-          email: input.email,
-          company: input.company,
-        });
+    createContact: (root, { input }) => {
+      const newContact = new Contacts({
+        firstName: input.firstName,
+        lastName: input.lastName,
+        email: input.email,
+        company: input.company,
+      });
 
-        newContact.id = newContact._id;
+      newContact.id = newContact._id;
 
-        return new Promise((resolve, object) => {
-          newContact.sabe((err) => {
-            if (err) reject(err);
-            else resolve(newContact);
-          });
+      return new Promise((resolve, object) => {
+        newContact.sabe((err) => {
+          if (err) reject(err);
+          else resolve(newContact);
         });
-      }),
+      });
+    },
   },
 };
