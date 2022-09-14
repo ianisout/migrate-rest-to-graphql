@@ -7,6 +7,14 @@ export const resolvers = {
     getContacts: () => {
       return Contacts.find();
     },
+    getOneContact: (root, { id }) => {
+      return new Promise((resolve, reject) => {
+        Contacts.findById(id, (err, contact) => {
+          if (err) reject(err);
+          else resolve(contact);
+        });
+      });
+    },
   },
   Mutation: {
     createContact: (root, { input }) => {

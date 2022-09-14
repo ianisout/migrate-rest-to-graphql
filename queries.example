@@ -12,3 +12,13 @@ mutation {
   }
 }
 
+// get one contact by id
+
+query {
+  getOneContact(id: "63220ca7e8d3d5c83eb70c1d") {
+    firstName
+    lastName
+    email
+    company
+  }
+}
