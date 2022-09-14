@@ -54,3 +54,18 @@ fragment contactFragment on Contact {
   lastName
   company
 }
+
+// 
+
+mutation {
+  updateContact(input: {
+    id: "63220ce1e8d3d5c83eb70c1f"
+    firstName: "Gandalf"
+    lastName: "The Grey"
+    company: "The Fellowship of the Ring"
+  }) {
+    firstName
+    lastName
+    company
+  }
+}

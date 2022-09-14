@@ -27,12 +27,20 @@ export const resolvers = {
 
       newContact.id = newContact._id;
 
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve, object) => {
         newContact.save((err) => {
           if (err) reject(err);
           else resolve(newContact);
         });
       });
     },
+    updateContact: (root, { input }) => {
+      return new Promise((resolve, reject) => {
+        Contacts.findByIdAndUpdate({_id: input.id }, input, {new: true}, (err, contact) => {
+          if (err) reject(err);
+          else resolve(contact);
+        });
+      });
+    }
   },
 };
